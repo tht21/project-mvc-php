@@ -1,0 +1,10 @@
+1 thiết kế csdl
+
+2 trang admin 
+         - 
+
+         -  Các bước phân trang:
+                     *  Tính tổng số record  trong CSDL
+                     *   Xác định số record trên một trang $limit
+                     *  Tính tổng số trang dưa vào tổng số record và số record trên một trang
+                     *   Sau khi có tổng số record thì in ra trình duyệt
