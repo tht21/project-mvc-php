@@ -2,11 +2,10 @@
 include './Config/ConnectDB.php';
 class ProductModel
 {
-    public static function getAll($startRow, $limit)
+    public static function getAll()
     {
-
         global $conn;
-        $sql = "SELECT * FROM product LIMIT  $startRow, $limit ";
+        $sql = "SELECT * FROM product ";
         $stmt = $conn->query($sql);
         //Thiet lap csdl tra ve
         $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -15,12 +14,12 @@ class ProductModel
         //Tra du lieu ve controller
         return $rows;
     }
-   
+
     public static function search_name($key)
     {
         global $conn;
         $sql = "SELECT * FROM `product` WHERE title like'%$key%';";
-       
+
         $stmt = $conn->query($sql);
         //Thiet lap csdl tra ve
         $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -42,12 +41,12 @@ class ProductModel
     public static function create($data)
     {
         global $conn;
-        $title =$data['title'];
-        $description =$data['description'];
-        $image =$data['image'];
-        $quantity =$data['quantity'];
-        $price =$data['price']; 
-        $category =$data['category_id'];   
+        $title = $data['title'];
+        $description = $data['description'];
+        $image = $data['image'];
+        $quantity = $data['quantity'];
+        $price = $data['price'];
+        $category = $data['category_id'];
         $sql = "INSERT INTO product  (category_id,title,description,image,quantity,price) VALUES ('$category','$title', '$description', '$image', '$quantity',' $price')";
         $conn->query($sql);
     }

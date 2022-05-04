@@ -39,9 +39,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($products as $key => $product) : ?>
+                  <?php foreach ($products as $key =>  $product) : ?>
                     <tr>
                       <td><?= ++$key ?></td>
+                      </td>
                       <td>
                         <img src="Public/uploads/<?= $product->image; ?>" alt="" style="width: 82px; height: 80px;">
                       </td>
@@ -61,34 +62,9 @@
 
                 </tbody>
               </table>
-              <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>
-                <?php for ($i=1; $i <100 ; $i++) { ?>
-                   <li class="page-item"><a class="page-link" href="index.php?controller=product&action=index&page=<?= $i?>"><?= $i?></a></li>
-               <?php } ?>
-                
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            </div>
-            
-            <?php
-          
-            // echo '<p>trang :</p>';
-            // for ($i = 1; $i <= $c; $i++) {
-            //   echo '<a style="margin:5px;" href="index.php?controller=product&action=index=' . $i . '">' . $i . '</a>';
-            // }
-            ?>
 
+
+            </div>
 
           </div>
         </div>

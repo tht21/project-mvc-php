@@ -5,18 +5,12 @@ class ProductController
 {
     public function index()
     {
-        $limit = 4; 
-        $pageNum = 1;
-      if(isset($_GET['page'])==true ) $pageNum= $_GET['page'] ;
-   
-        $startRow = ($pageNum - 1) * $limit;
- 
-        $products  = ProductModel::getAll($startRow, $limit);
-        //    $products1 = ProductModel::getAllf();
+        
+        $products  = ProductModel::getAll();
         // echo "<pre>";
         // print_r($products);
         // die();
-
+     
         include_once('./View/admin/product/index.php');
     }
 

@@ -40,4 +40,4 @@ switch ($action) {
         break;
 }
 
-//**http://localhost/VietShop/index.php?controller=product&action=index**/
+//**http://localhost:3000/xampp/htdocs/project-mvc-php/VietShop/index.php?controller=product&action=index**/

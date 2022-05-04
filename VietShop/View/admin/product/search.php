@@ -39,12 +39,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                 
-                    <tr>
-                    <?php foreach ($productSearch as $product) : ?>
+                <?php foreach ($productSearch as $product) : ?>
+                    <tr>              
                       <td><?= $product->id ?></td>
                       <td><?= $product->title ?></td>
-
                       <td><?= $product->category_id ?></td>
                       <td><?= $product->description ?></td>
                       <td><?= $product->image ?></td>
@@ -54,15 +52,14 @@
                       <td>
                          <a href="index.php?controller=product&action=edit&id=<?= $product->id ?>">sua</a>
                           <a href="index.php?controller=product&action=delete&id=<?= $product->id ?>">xoa</a>
-                      </td>
-                      
-                  <?php endforeach; ?>
-                    </tr>
-              
+                      </td>                          
+                    </tr>          
+                    <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
       </div>
+    </div>
       <?php include './View/admin/layout/footer.php' ?>
