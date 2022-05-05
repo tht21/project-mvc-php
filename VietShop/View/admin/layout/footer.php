@@ -8,25 +8,25 @@
         </footer>
         <!-- partial -->
 <!-- plugins:js -->
-  <script src="Public/vendors/js/vendor.bundle.base.js"></script>
+  <script src="Public/admin/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="Public/vendors/chart.js/Chart.min.js"></script>
-  <script src="Public/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-  <script src="Public/vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="Public/admin/vendors/chart.js/Chart.min.js"></script>
+  <script src="Public/admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+  <script src="Public/admin/vendors/progressbar.js/progressbar.min.js"></script>
 
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="Public/js/off-canvas.js"></script>
-  <script src="Public/js/hoverable-collapse.js"></script>
-  <script src="Public/js/template.js"></script>
-  <script src="Public/js/settings.js"></script>
-  <script src="Public/js/todolist.js"></script>
+  <script src="Public/admin/js/off-canvas.js"></script>
+  <script src="Public/admin/js/hoverable-collapse.js"></script>
+  <script src="Public/admin/js/template.js"></script>
+  <script src="Public/admin/js/settings.js"></script>
+  <script src="Public/admin/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="Public/js/jquery.cookie.js" type="text/javascript"></script>
-  <script src="Public/js/dashboard.js"></script>
-  <script src="Public/js/Chart.roundedBarCharts.js"></script>
+  <script src="Public/admin/js/jquery.cookie.js" type="text/javascript"></script>
+  <script src="Public/admin/js/dashboard.js"></script>
+  <script src="Public/admin/js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
 </body>
 

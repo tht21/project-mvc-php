@@ -5,7 +5,7 @@ class ProductModel
     public static function getAll()
     {
         global $conn;
-        $sql = "SELECT * FROM product ";
+        $sql = "SELECT * FROM product  ";
         $stmt = $conn->query($sql);
         //Thiet lap csdl tra ve
         $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -15,10 +15,10 @@ class ProductModel
         return $rows;
     }
 
-    public static function search_name($key)
+    public static function search($key)
     {
         global $conn;
-        $sql = "SELECT * FROM `product` WHERE title like'%$key%';";
+        $sql = "SELECT * FROM `product` WHERE masp like'%$key%';";
 
         $stmt = $conn->query($sql);
         //Thiet lap csdl tra ve

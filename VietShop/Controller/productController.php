@@ -5,13 +5,12 @@ class ProductController
 {
     public function index()
     {
-        
         $products  = ProductModel::getAll();
         // echo "<pre>";
         // print_r($products);
         // die();
-     
-        include_once('./View/admin/product/index.php');
+        include_once('./View/admin/product/index.php');  
+        //include_once('./View/site/product/index.php');
     }
 
     public  function add()
@@ -26,6 +25,7 @@ class ProductController
         }
         $categorys = CategoryModel::getAll();
         include_once './View/admin/product/add.php';
+
     }
     public   function edit()
     {
@@ -55,7 +55,8 @@ class ProductController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $key = $_REQUEST['search'];
-            $productSearch = ProductModel::search_name($key);
+            $productSearch = ProductModel::search($key);
+        
         }
         include_once './View/admin/product/search.php';
     }

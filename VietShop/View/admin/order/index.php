@@ -6,14 +6,14 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Danh sách sản phẩm</h4>
+            <h4 class="card-title">Danh sách dat hang </h4>
             <p class="card-description">
             <div class="row">
-              <div class="col-lg-9"> <a class="nav-link" href="index.php?controller=product&action=add">Thêm sản phẩm </a></div>
+              <div class="col-lg-9"></div>
               <div class="col-lg-3">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <form class="search-form" action="index.php?controller=product&action=search" method="POST">
+                    <form class="search-form" action="index.php?controller=order&action=search" method="POST">
                       <i class="icon-search"></i>
                       <input type="search" placeholder="Search Here" name="search" title="Search here">
                       <button type="submit">seach</button>
@@ -45,7 +45,7 @@
                       <td><?= ++$key ?></td>
                       <td><?= $product->masp?></td>
                       <td>
-                        <img src="Public/admin/uploads/<?= $product->image; ?>" alt="" style="width: 82px; height: 80px;">
+                        <img src="Public/uploads/<?= $product->image; ?>" alt="" style="width: 82px; height: 80px;">
                       </td>
                       <td><?= $product->category_id ?></td>
                       <td><?= $product->title ?></td>

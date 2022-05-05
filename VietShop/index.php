@@ -10,6 +10,10 @@ switch ($controller) {
         include_once './Controller/categoryController.php';
         $objController = new CategoryController();
         break;
+    case 'order':
+        include_once './Controller/orderController.php';
+        $objController = new OrderController();
+        break;
         // case 'User':
         //     include_once './controllers/UserController.php';
         //     $objController = new UserController();
@@ -33,8 +37,8 @@ switch ($action) {
         $objController->delete();
         break;
     case 'search':
-            $objController->search();
-            break;
+        $objController->search();
+        break;
     default:
         $objController->index();
         break;
