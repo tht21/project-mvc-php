@@ -47,7 +47,7 @@
                       <td>
                         <img src="Public/admin/uploads/<?= $product->image; ?>" alt="" style="width: 82px; height: 80px;">
                       </td>
-                      <td><?= $product->category_id ?></td>
+                      <td><?= $product->name ?></td>
                       <td><?= $product->title ?></td>
                       <td><?= $product->description ?></td>
                       <td><?= $product->quantity ?></td>

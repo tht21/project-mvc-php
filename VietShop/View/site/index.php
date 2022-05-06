@@ -1,4 +1,4 @@
-<?php include('./View/site/layout/header.php') ?>
+<?php include('./View/site/layout/hearder.php') ?>
 <?php include('./View/site/layout/menu.php') ?>
 
 	
@@ -622,4 +622,4 @@
 		</div>
 	</section>
 	
-<?php include "../Vshop/footer.php"; ?>
+	<?php include ('./View/site/layout/footer.php') ?>

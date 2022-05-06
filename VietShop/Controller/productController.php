@@ -9,8 +9,8 @@ class ProductController
         // echo "<pre>";
         // print_r($products);
         // die();
-        include_once('./View/admin/product/index.php');  
-        //include_once('./View/site/product/index.php');
+      //  include_once('./View/admin/product/index.php');  
+        include_once('./View/site/index.php');
     }
 
     public  function add()
