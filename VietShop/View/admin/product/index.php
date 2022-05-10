@@ -24,47 +24,41 @@
             </div>
 
             <div class="table-responsive pt-3">
-              <table class="table table-bordered">
-                <thead>
+              <table class="table table-bordered border=1" width="500">
+                <thead align="center" class="strong">
                   <tr>
-                    <th> ID</th>
-                    <th> Mã sản phẩm</th>
+                    <th> #</th>
+
                     <th> Image </th>
                     <th>Danh mục sản phẩm</th>
                     <th> Tên sản phẩm </th>
-                    <th> Mô tả sản phẩm</th>
                     <th> Sô lượng </th>
                     <th> Số tiền </th>
                     <th> Action</th>
-
                   </tr>
                 </thead>
                 <tbody>
                   <?php foreach ($products as $key =>  $product) : ?>
                     <tr>
                       <td><?= ++$key ?></td>
-                      <td><?= $product->masp?></td>
+
                       <td>
-                        <img src="Public/admin/uploads/<?= $product->image; ?>" alt="" style="width: 82px; height: 80px;">
+                        <img src="assets/uploads/<?= $product->image; ?>" alt="" style="width: 82px; height: 80px;">
                       </td>
                       <td><?= $product->name ?></td>
                       <td><?= $product->title ?></td>
-                      <td><?= $product->description ?></td>
                       <td><?= $product->quantity ?></td>
-                      <td><?= $product->price ?></td>
+                      <td><?= number_format($product->price) ?></td>
                       <!-- edit&id -->
                       <td>
-                        <a href="index.php?controller=product&action=delete&id=<?= $product->id ?>" onclick="return confirm ('Bạn có chắc muốn xóa <?= $product->title ?> không')">xoa</a>
-                        <a href="index.php?controller=product&action=edit&id=<?= $product->id ?>"><i class="fa-solid fa-trash-can"></i>sua</a>
+                        <a href="index.php?controller=product&action=delete&id=<?= $product->id ?>" onclick="return confirm ('Bạn có chắc muốn xóa <?= $product->title ?> không')" class="btn btn-primary">xoa</a>
+                        <a class="btn btn-primary" href="index.php?controller=product&action=edit&id=<?= $product->id ?>">sua</a>
                       </td>
                     </tr>
                     </tr>
                   <?php endforeach; ?>
-
                 </tbody>
               </table>
-
-
             </div>
 
           </div>

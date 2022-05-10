@@ -3,39 +3,41 @@ include_once './Model/productModel.php';
 include_once './Model/categoryModel.php';
 class ProductController
 {
+    public function __construct()
+    {
+        $this->productModel = new ProductModel();
+        $this->categoryModel = new CategoryModel();
+    }
     public function index()
     {
-        $products  = ProductModel::getAll();
-        // echo "<pre>";
-        // print_r($products);
-        // die();
-      //  include_once('./View/admin/product/index.php');  
-        include_once('./View/site/index.php');
+        $products  =  $this->productModel->getAll();
+        include_once('./View/admin/product/index.php');
+    
     }
+
 
     public  function add()
     {
         //isset($_POST['submit'])
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            ProductModel::create($_REQUEST);
+            $this->productModel->create($_REQUEST);
             // echo "<pre>";
             // print_r($_REQUEST);
             // die();
             header('Location: index.php?controller=product&action=index');
         }
-        $categorys = CategoryModel::getAll();
+        $categorys =  $this->categoryModel->getAll();
         include_once './View/admin/product/add.php';
-
     }
     public   function edit()
     {
 
         //lay id tu csdl len
         $id =  $_REQUEST['id'];
-        $product  = ProductModel::find($id);
+        $product  =  $this->productModel->find($id);
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            ProductModel::update($id, $_POST['title'],  $_POST['description'], $_POST['image'],  $_POST['quantity'],  $_POST['price']);
+            $this->productModel->update($id, $_POST['title'],  $_POST['description'], $_POST['image'],  $_POST['quantity'],  $_POST['price']);
             //    echo "<pre>";
             // print_r($products);
             // die();
@@ -48,15 +50,14 @@ class ProductController
     public  function delete()
     {
         $id = $_REQUEST['id'];
-        ProductModel::delete($id);
+        $this->productModel->delete($id);
         header('location:index.php?controller=product&action=index');
     }
     public function search()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $key = $_REQUEST['search'];
-            $productSearch = ProductModel::search($key);
-        
+            $productSearch =  $this->productModel->search($key);
         }
         include_once './View/admin/product/search.php';
     }

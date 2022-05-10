@@ -1,14 +1,18 @@
 <?php
 include_once './Model/categoryModel.php';
 class CategoryController{
+    
+    public function __construct(){
+        $this->categoryModel =new CategoryModel();
+       }
     public  function index() {
-        $category = CategoryModel::getAll();
+        $category = $this->categoryModel->getAll();
         include_once('./View/admin/category/index.php');
     }
     public  function add(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $name = $_POST['name'];
-            CategoryModel::create($name);
+            $this->categoryModel->create($name);
             // echo "<pre>";
             // print_r($_REQUEST);
             // die();
@@ -18,9 +22,9 @@ class CategoryController{
     }
     public  function edit(){
         $id =  $_REQUEST['id'];
-        $category  =CategoryModel::find($id);
+        $category  =$this->categoryModel->find($id);
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        CategoryModel::update($id, $_POST['name']);
+        $this->categoryModel->update($id, $_POST['name']);
             header('location:index.php?controller=category&action=index&id=' . $id);
         }
         include_once './View/admin/category/edit.php';
@@ -29,13 +33,13 @@ class CategoryController{
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $key = $_REQUEST['search'];
-            $categorySearch = CategoryModel::search_name($key);
+            $categorySearch = $this->categoryModel->search_name($key);
         }
         include_once './View/admin/category/search.php';
     }
     public  function delete(){
         $id = $_REQUEST['id'];
-        CategoryModel::delete($id);
+        $this->categoryModel->delete($id);
         header('location:index.php?controller=category&action=index');
     }
 

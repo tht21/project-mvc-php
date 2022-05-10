@@ -158,12 +158,12 @@
 	
 
   
-    <script src="Public/site/js/jquery.js"></script>
-	<script src="Public/site/js/bootstrap.min.js"></script>
-	<script src="Public/site/js/jquery.scrollUp.min.js"></script>
-	<script src="Public/site/js/price-range.js"></script>
-    <script src="Public/site/js/jquery.prettyPhoto.js"></script>
-    <script src="Public/site/js/main.js"></script>
+    <script src="./../../assets/site/js/jquery.js"></script>
+	<script src="./../../assets/site/js/bootstrap.min.js"></script>
+	<script src="./../../assets/site/js/jquery.scrollUp.min.js"></script>
+	<script src="./../../assets/site/js/price-range.js"></script>
+    <script src="./../../assets/site/js/jquery.prettyPhoto.js"></script>
+    <script src="./../../assets/site/js/main.js"></script>
 	</body>
 </html>
     

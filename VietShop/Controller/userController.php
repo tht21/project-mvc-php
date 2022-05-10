@@ -7,19 +7,20 @@ class UserController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = $_POST['email'];
             $password = $_POST['password'];
-
-
             $check =  UserModel::checkLogin($email, $password);
+            // echo '<pre>';      
             // print_r($check);
-            // die();
-            if ($check==0) {              
-                header('Location:./View/site/index.php');
-              
-            } else {
-                echo "<script>alert('Sai mật khẩu hoặc tên đăng nhập')</script>";
+            //  die();  
+            $_SESSION['role'] =$check->role_id;
+             
+            if ($_SESSION['role']==1) {
+                header('location:index.php?controller=product&action=index');
+            }
+            if ($_SESSION['role']==2) {
+                header('location: ./View/site/index.php');
             }
         }
-        include './View/site/user/login.php';
+        include './View/login.php';
     }
 
 }

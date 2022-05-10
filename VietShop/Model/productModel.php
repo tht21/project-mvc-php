@@ -1,11 +1,26 @@
 <?php
-include './Config/ConnectDB.php';
+include './Connection.php';
 class ProductModel
 {
-    public static function getAll()
+
+    public   function getAll()
     {
         global $conn;
-        $sql = "SELECT * FROM product  ";
+        $sql = "SELECT * FROM product join category on product.category_id = category.id";
+        $stmt = $conn->query($sql);
+        // Thiet lap csdl tra ve
+        $stmt->setFetchMode(PDO::FETCH_OBJ);
+        //fetchALL se tra ve du lieu nhieu hon 1 ket qua
+        $rows = $stmt->fetchAll();
+        //Tra du lieu ve controller
+        return $rows;
+    }
+
+    public  function search($key)
+    {
+        global $conn;
+        $sql = "SELECT * FROM `product`  join category on product.category_id = category.id   WHERE title like'%$key%';";
+
         $stmt = $conn->query($sql);
         //Thiet lap csdl tra ve
         $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -14,21 +29,7 @@ class ProductModel
         //Tra du lieu ve controller
         return $rows;
     }
-
-    public static function search($key)
-    {
-        global $conn;
-        $sql = "SELECT * FROM `product` WHERE masp like'%$key%';";
-
-        $stmt = $conn->query($sql);
-        //Thiet lap csdl tra ve
-        $stmt->setFetchMode(PDO::FETCH_OBJ);
-        //fetchALL se tra ve du lieu nhieu hon 1 ket qua
-        $rows = $stmt->fetchAll();
-        //Tra du lieu ve controller
-        return $rows;
-    }
-    public static function find($id)
+    public  function find($id)
     {
         global $conn;
         $sql = "SELECT * FROM `product` WHERE `id` = $id";
@@ -38,7 +39,7 @@ class ProductModel
         $row = $stmt->fetch();
         return $row;
     }
-    public static function create($data)
+    public  function create($data)
     {
         global $conn;
         $title = $data['title'];
@@ -50,13 +51,13 @@ class ProductModel
         $sql = "INSERT INTO product  (category_id,title,description,image,quantity,price) VALUES ('$category','$title', '$description', '$image', '$quantity',' $price')";
         $conn->query($sql);
     }
-    public static function update($id, $title, $description, $image, $quantity, $price)
+    public  function update($id, $title, $description, $image, $quantity, $price)
     {
         global $conn;
         $sql = "UPDATE product SET title = '$title',description = '$description',image = '$image',quantity = '$quantity',price = '$price' WHERE id = '$id'";
         $conn->query($sql);
     }
-    public static function delete($id)
+    public  function delete($id)
     {
         global $conn;
         $sql = "DELETE FROM product WHERE id = '$id'";

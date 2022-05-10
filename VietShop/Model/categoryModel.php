@@ -1,8 +1,9 @@
 <?php
-include './Config/ConnectDB.php';
-class CategoryModel{
+include './Connection.php';
+class CategoryModel
+{
 
-    public static function getAll()
+    public function getAll()
     {
         global $conn;
         $sql = "SELECT * FROM category";
@@ -14,7 +15,7 @@ class CategoryModel{
         //Tra du lieu ve controller
         return $rows;
     }
-    public static function search_name($key)
+    public function search_name($key)
     {
         global $conn;
         $sql = "SELECT * FROM `category` WHERE name like'%$key%'";
@@ -27,7 +28,7 @@ class CategoryModel{
         //Tra du lieu ve controller
         return $rows;
     }
-    public static function find($id)
+    public function find($id)
     {
         global $conn;
         $sql = "SELECT * FROM `category` WHERE `id` = $id";
@@ -37,20 +38,20 @@ class CategoryModel{
         $row = $stmt->fetch();
         return $row;
     }
-    public static function create($name)
+    public function create($name)
     {
         global $conn;
         $sql = "INSERT INTO category  (name) VALUES ('$name')";
-        $conn->query($sql); 
+        $conn->query($sql);
     }
-    public static function update($id, $name)
+    public function update($id, $name)
     {
         global $conn;
         $sql = "UPDATE category SET name = '$name'WHERE id = '$id'";
         $conn->query($sql);
-
     }
-    public static function delete($id){
+    public function delete($id)
+    {
         global $conn;
         $sql = "DELETE FROM category WHERE id = '$id'";
         $conn->query($sql);

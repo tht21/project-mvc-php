@@ -7,25 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Star Admin </title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="Public/admin/vendors/feather/feather.css">
-  <link rel="stylesheet" href="Public/admin/vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="Public/admin/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="Public/admin/vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="Public/admin/vendors/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="Public/admin/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="assets/admin/vendors/feather/feather.css">
+  <link rel="stylesheet" href="assets/admin/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="assets/admin/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="assets/admin/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="assets/admin/vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="assets/admin/vendors/css/vendor.bundle.base.css">
  
   
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="Public/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="Public/admin/js/select.dataTables.min.css">
+  <link rel="stylesheet" href="assets/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="assets/admin/js/select.dataTables.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="Public/admin/css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="assets/admin/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="Public/admin/images/favicon.png" />
+  <link rel="shortcut icon" href="assets/admin/images/favicon.png" />
 </head>
 <body>
   <div class="container-scroller">
@@ -43,11 +43,11 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="Public/admin/images/logo.svg" alt="logo" />
+          <a class="navbar-brand brand-logo" href="">
+            <img src="assets/admin/images/logo.svg" alt="logo" />
           </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="Public/admin/images/logo-mini.svg" alt="logo" />
+          <a class="navbar-brand brand-logo-mini" href="">
+            <img src="assets/admin/images/logo-mini.svg" alt="logo" />
           </a>
         </div>
       </div>
@@ -166,7 +166,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="Public/admin/ images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="assets/admin/ images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -175,7 +175,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="Public/admin/ images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                  <img src="assets/admin/ images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
