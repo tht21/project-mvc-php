@@ -23,6 +23,7 @@ class CategoryController{
     public  function edit(){
         $id =  $_REQUEST['id'];
         $category  =$this->categoryModel->find($id);
+      
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $this->categoryModel->update($id, $_POST['name']);
             header('location:index.php?controller=category&action=index&id=' . $id);

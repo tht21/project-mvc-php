@@ -1,5 +1,5 @@
 <?php include('layout/hearder.php');
-
+//  print_r($categorys);die();
 ?>
 
 	<section id="slider"><!--slider-->
@@ -71,38 +71,46 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
-				 <?php include '../Vshop/category.php';?>	
+				<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<?php foreach ($categorys as $key => $category) : ?>							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#"><?= $category->name?></a></h4>
+								</div>
+							</div>
+							<?php endforeach; ?>
+						</div><!--/category-products-->
+					
+						
+				
+					</div>
 				</div>
 				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
+						<?php foreach ($products as $key =>  $product) : ?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="product info text-center">
-											<img src="images/home/product1.jpg" alt="" />
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+											<img src="assets/uploads/<?= $product->image; ?>" alt=""  style="height:150px"/>
+											<h2><?= number_format($product->price)  ; ?>đ</h2>
+											<p><?= $product->title ; ?></p>
+											<a href="index.php?controller=cart&action=index&id=<?= $product->id ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>xem chi tiết sản phâm</a></li>
+								
 									</ul>
 								</div>
 							</div>
 						</div>
-		
+						<?php endforeach; ?>
 						
 					</div><!--features_items-->
 					

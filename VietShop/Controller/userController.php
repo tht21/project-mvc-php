@@ -7,7 +7,7 @@ class UserController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $check =  UserModel::checkLogin($email, $password);
+            $check =  UserModel::checkLogin($email, $password); 
             // echo '<pre>';      
             // print_r($check);
             //  die();  
@@ -17,7 +17,7 @@ class UserController
                 header('location:index.php?controller=product&action=index');
             }
             if ($_SESSION['role']==2) {
-                header('location: ./View/site/index.php');
+                header('location:php?controller=site&action=index');
             }
         }
         include './View/login.php';

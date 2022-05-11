@@ -31,7 +31,7 @@
                     <th> Image </th>
                     <th> Tên sản phẩm </th>
                     <th>Danh mục sản phẩm</th>
-          
+                    <th>mo ta sản phẩm</th>
                     <th> Sô lượng </th>
                     <th> Số tiền </th>
                     <th> Action</th>
@@ -45,9 +45,9 @@
                       <td>  <img src="assets/uploads/<?= $product->image; ?>" alt="" style="width: 82px; height: 80px;"></td>
                       <td><?= $product->title ?></td>
                       <td><?=  $product->name ?></td>        
-               
+                      <td><?= $product->description ?></td>
                       <td><?= $product->quantity ?></td>
-                      <td><?= $product->price ?></td>
+                      <td><?= number_format($product->price) ?></td>
                       <!-- edit&id -->
                       <td>
                          <a href="index.php?controller=product&action=edit&id=<?= $product->id ?>">sua</a>

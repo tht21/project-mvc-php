@@ -13,7 +13,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="images/home/iframe1.png" alt="" />
+										<img src="assets/site/images/home/iframe1.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -158,12 +158,12 @@
 	
 
   
-    <script src="./../../assets/site/js/jquery.js"></script>
-	<script src="./../../assets/site/js/bootstrap.min.js"></script>
-	<script src="./../../assets/site/js/jquery.scrollUp.min.js"></script>
-	<script src="./../../assets/site/js/price-range.js"></script>
-    <script src="./../../assets/site/js/jquery.prettyPhoto.js"></script>
-    <script src="./../../assets/site/js/main.js"></script>
+    <script src="assets/site/js/jquery.js"></script>
+	<script src="assets/site/js/bootstrap.min.js"></script>
+	<script src="assets/site/js/jquery.scrollUp.min.js"></script>
+	<script src="assets/site/js/price-range.js"></script>
+    <script src="assets/site/js/jquery.prettyPhoto.js"></script>
+    <script src="assets/site/js/main.js"></script>
 	</body>
 </html>
     

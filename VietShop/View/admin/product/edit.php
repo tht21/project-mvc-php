@@ -1,5 +1,6 @@
 <?php include('./View/admin/layout/header.php') ?>
 <?php include('./View/admin/layout/sidebar.php') ?>
+
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="row">
@@ -13,14 +14,21 @@
                                 <label for="exampleInputName1">Tên sản phẩm</label>
                                 <input name="title" type="text" class="form-control" id="exampleInputName1" value="<?= $product->title ?>" >
                             </div>
-                            
+                            <div class="form-group">
+                                <label>Danh muc sản phẩm</label>
+                                <select name="category_id" class="js-example-basic-single w-100">                            
+                                    <?php foreach ($categorys as  $category) : ?>
+                                        <option value="<?= $category->id ?>"> <?= $category->name ?> </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="exampleTextarea1">Mô tả sản phẩm</label>
                                 <input name="description" class="form-control" id="exampleTextarea1" rows="4"value="<?= $product->description ?>" ></input>
                             </div>
                             <div class="form-group">
                                 <label>File ảnh</label>          
-                                    <input type="file"name="image" class="form-control " value="<?= $product->image ?>">   
+                                    <input type="file"name="image" class="form-control " value=" src='assets/uploads/<?= $product->image; ?>'">   
                             </div>
 
                             <div class="form-group">

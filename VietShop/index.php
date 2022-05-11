@@ -1,32 +1,45 @@
 <?php
-$controller = $_REQUEST['controller']; 
-$action     = $_REQUEST['action']; 
+$controller = $_REQUEST['controller'];
+$action     = $_REQUEST['action'];
 switch ($controller) {
     case "user":
         include './Controller/userController.php';
         $objController = new UserController();
-        break;  
+        break;
     case "product":
-        include './Controller/productController.php';
+        include './Controller/admin/productController.php';
         $objController = new ProductController();
         break;
-    // case 'category':
-    //     include_once './Controller/categoryController.php';
-    //     $objController = new CategoryController();
-    //     break;
-    // case 'order':
-    //     include_once './Controller/orderController.php';
-    //     $objController = new OrderController();
-    //     break;
+    case 'category':
+        include_once './Controller/admin/categoryController.php';
+        $objController = new CategoryController();
+        break;
+
+        // case 'order':
+        //     include_once './Controller/orderController.php';
+        //     $objController = new OrderController();
+        //     break;
         // case 'User':
         //     include_once './controllers/UserController.php';
         //     $objController = new UserController();
         //     break;
+    case "site":
+        include './Controller/client/productController.php';
+        $objController = new ProductController();
+        break;
+    case "sites":
+        include './Controller/client/categoryController.php';
+        $objController = new CategoryController();
+        break;
+    case "cart":
+        include './Controller/client/cartController.php';
+        $objController = new CartController();
+        break;
     default:
     case "user ":
         include './Controller/userController.php';
         $objController = new UserController();
-      
+
         break;
 }
 // action giua model vaf controller

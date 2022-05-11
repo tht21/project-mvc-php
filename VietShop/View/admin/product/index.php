@@ -24,7 +24,7 @@
             </div>
 
             <div class="table-responsive pt-3">
-              <table class="table table-bordered border=1" width="500">
+              <table class="table table-bordered border=1" width="500 px">
                 <thead align="center" class="strong">
                   <tr>
                     <th> #</th>
@@ -40,13 +40,13 @@
                 <tbody>
                   <?php foreach ($products as $key =>  $product) : ?>
                     <tr>
-                      <td><?= ++$key ?></td>
+                      <td><?=$product->id ?></td>
 
                       <td>
                         <img src="assets/uploads/<?= $product->image; ?>" alt="" style="width: 82px; height: 80px;">
                       </td>
                       <td><?= $product->name ?></td>
-                      <td><?= $product->title ?></td>
+                      <td style="width: 20px;"><?= $product->title ?></td>
                       <td><?= $product->quantity ?></td>
                       <td><?= number_format($product->price) ?></td>
                       <!-- edit&id -->

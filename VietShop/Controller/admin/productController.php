@@ -8,13 +8,14 @@ class ProductController
         $this->productModel = new ProductModel();
         $this->categoryModel = new CategoryModel();
     }
+
+
     public function index()
     {
         $products  =  $this->productModel->getAll();
         include_once('./View/admin/product/index.php');
     
     }
-
 
     public  function add()
     {
@@ -31,22 +32,17 @@ class ProductController
     }
     public   function edit()
     {
-
-        //lay id tu csdl len
         $id =  $_REQUEST['id'];
-        $product  =  $this->productModel->find($id);
-
+        $product  = $this->productModel->find($id);
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $this->productModel->update($id, $_POST['title'],  $_POST['description'], $_POST['image'],  $_POST['quantity'],  $_POST['price']);
-            //    echo "<pre>";
-            // print_r($products);
-            // die();
-            // chay toi ciew
+           // print_r($_POST['category_id']);die();
+            $this->productModel->update($id, $_POST['title'], $_POST['category_id'], $_POST['description'], $_POST['image'],  $_POST['quantity'],  $_POST['price']);
             header('location:index.php?controller=product&action=index&id=' . $id);
         }
-
+        $categorys =  $this->categoryModel->getAll();
         include_once './View/admin/product/edit.php';
     }
+    
     public  function delete()
     {
         $id = $_REQUEST['id'];
