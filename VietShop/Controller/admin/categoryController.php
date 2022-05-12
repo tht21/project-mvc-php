@@ -13,9 +13,8 @@ class CategoryController{
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $name = $_POST['name'];
             $this->categoryModel->create($name);
-            // echo "<pre>";
-            // print_r($_REQUEST);
-            // die();
+   ;
+            $_SESSION['flash_message'] = "Thêm thành công";
             header('Location: index.php?controller=category&action=index');
         }
         include_once './View/admin/category/add.php';
@@ -26,6 +25,7 @@ class CategoryController{
       
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $this->categoryModel->update($id, $_POST['name']);
+        $_SESSION['flash_message'] = "Chỉnh sửa  thành công";
             header('location:index.php?controller=category&action=index&id=' . $id);
         }
         include_once './View/admin/category/edit.php';

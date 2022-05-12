@@ -1,11 +1,15 @@
-<?php include('./View/admin/layout/header.php') ?>
-<?php include('./View/admin/layout/sidebar.php') ?>
+<?php
+include('./View/admin/layout/header.php');
+include('./View/admin/layout/sidebar.php');
+?>
+
 <div class="main-panel">
   <div class="content-wrapper">
     <div class="row">
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
+            
             <h4 class="card-title">Danh sách sản phẩm</h4>
             <p class="card-description">
             <div class="row">
@@ -19,10 +23,14 @@
                       <button type="submit">seach</button>
                     </form>
                   </li>
-                </ul>
+                </ul> 
               </div>
             </div>
-
+            <?php if (isset($_SESSION['flash_message'])) : ?>
+              <?php $message = $_SESSION['flash_message']; ?>
+              <?php unset($_SESSION['flash_message']); ?>
+              <div class="alert alert-success"><i class="fas fa-check"></i> <?= $message ?></div>
+            <?php endif; ?>
             <div class="table-responsive pt-3">
               <table class="table table-bordered border=1" width="500 px">
                 <thead align="center" class="strong">
@@ -40,7 +48,7 @@
                 <tbody>
                   <?php foreach ($products as $key =>  $product) : ?>
                     <tr>
-                      <td><?=$product->id ?></td>
+                      <td><?= $product->id ?></td>
 
                       <td>
                         <img src="assets/uploads/<?= $product->image; ?>" alt="" style="width: 82px; height: 80px;">

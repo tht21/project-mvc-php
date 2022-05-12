@@ -1,4 +1,5 @@
 <?php
+session_start();
 $controller = $_REQUEST['controller'];
 $action     = $_REQUEST['action'];
 switch ($controller) {
@@ -14,11 +15,10 @@ switch ($controller) {
         include_once './Controller/admin/categoryController.php';
         $objController = new CategoryController();
         break;
-
-        // case 'order':
-        //     include_once './Controller/orderController.php';
-        //     $objController = new OrderController();
-        //     break;
+    case 'order':
+        include_once './Controller/admin/orderController.php';
+        $objController = new OrderController();
+        break;
         // case 'User':
         //     include_once './controllers/UserController.php';
         //     $objController = new UserController();
@@ -32,7 +32,7 @@ switch ($controller) {
         $objController = new CategoryController();
         break;
     case "cart":
-        include './Controller/client/cartController.php';
+        include './Controller/client/orderController.php';
         $objController = new CartController();
         break;
     default:

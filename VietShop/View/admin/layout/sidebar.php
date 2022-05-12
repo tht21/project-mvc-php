@@ -1,4 +1,4 @@
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
+<nav class="sidebar sidebar-offcanvas 123" id="sidebar">
   <ul class="nav">
     <li class="nav-item">
       <a class="nav-link" href="">
@@ -22,7 +22,7 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#table" aria-expanded="false" aria-controls="tables">
+      <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
         <i class="menu-icon mdi mdi-table"></i>
         <span class="menu-title">Sản Phẩm</span>
         <i class="menu-arrow"></i>
@@ -42,17 +42,17 @@
       </a>
       <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="">danh sach nguoi dung </a></li>
+          <li class="nav-item"> <a class="nav-link" href="">Danh sách đơn hàng </a></li>
         </ul>
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+      <a class="nav-link" data-bs-toggle="collapse" href="#user" aria-expanded="false" aria-controls="user">
         <i class="menu-icon mdi mdi-account-circle-outline"></i>
         <span class="menu-title">Thành viên </span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="auth">
+      <div class="collapse" id="user">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="">danh sach nguoi dung </a></li>
         </ul>

@@ -1,12 +1,14 @@
 <?php
 include_once './Model/orderModel.php';
 class OrderController{
+   public function __construct(){
+      $this->order = new OrderModel();
+   }
  public function index(){
-    OrderModel::getAll();
+   $order=$this->order -> getAll();
     include_once('./View/admin/order/index.php');
  }
- public function add(){}
- public function edit(){}
+ 
  public function search(){}
- public function delete(){}
+
 }   

@@ -22,11 +22,13 @@ class ProductController
         //isset($_POST['submit'])
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $this->productModel->create($_REQUEST);
+            $_SESSION['flash_message'] = "Thêm mới thành công";
             // echo "<pre>";
             // print_r($_REQUEST);
             // die();
             header('Location: index.php?controller=product&action=index');
         }
+       
         $categorys =  $this->categoryModel->getAll();
         include_once './View/admin/product/add.php';
     }
@@ -37,6 +39,8 @@ class ProductController
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
            // print_r($_POST['category_id']);die();
             $this->productModel->update($id, $_POST['title'], $_POST['category_id'], $_POST['description'], $_POST['image'],  $_POST['quantity'],  $_POST['price']);
+            $_SESSION['flash_message'] = "Chỉnh sửa  thành công";
+            // echo "<pre>";
             header('location:index.php?controller=product&action=index&id=' . $id);
         }
         $categorys =  $this->categoryModel->getAll();

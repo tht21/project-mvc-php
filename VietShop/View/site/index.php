@@ -1,5 +1,6 @@
 <?php include('layout/hearder.php');
 //  print_r($categorys);die();
+session_start();
 ?>
 
 	<section id="slider"><!--slider-->

@@ -11,8 +11,9 @@ class CartController
     public function index()
     {
         $id =  $_REQUEST['id'];
-        $addcarts  = $this->productModel->find($id);
-       
+        $addcarts  = $this->productModel->find($id);  
+      //  $this->productModel->create($addcarts);
+   // print_r($addcarts);die();
         include_once('./View/site/cart.php');
     }
 }
