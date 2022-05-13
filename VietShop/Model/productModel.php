@@ -39,15 +39,10 @@ class ProductModel
         $row = $stmt->fetch();
         return $row;
     }
-    public  function create($data)
+    public  function create($title,  $description,   $image,   $quantity, $price, $category)
     {
         global $conn;
-        $title = $data['title'];
-        $description = $data['description'];
-        $image = $data['image'];
-        $quantity = $data['quantity'];
-        $price = $data['price'];
-        $category = $data['category_id'];
+     
         $sql = "INSERT INTO product  (category_id,title,description,image,quantity,price) VALUES ('$category','$title', '$description', '$image', '$quantity',' $price')";
         $conn->query($sql);
     }

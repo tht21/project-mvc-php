@@ -1,7 +1,7 @@
 <?php
 include_once './Model/productModel.php';
 include_once './Model/categoryModel.php';
-class ProductController
+class DetailController
 {
     public function __construct()
     {
@@ -10,9 +10,9 @@ class ProductController
     }
     public function index()
     {
-        $products  =  $this->productModel->getAll();
+        $id =  $_REQUEST['id'];
+        $details  = $this->productModel->find($id);  
         $categorys  =  $this->categoryModel->getAll();
-        include_once('./View/site/index.php');
+        include_once('./View/site/productDetails.php');
     }
 }
-  

@@ -1,7 +1,7 @@
 <?php
 include_once './Model/productModel.php';
 //include_once './Model/categoryModel.php';
-class CartController
+class OrderController
 {
     public function __construct()
     {

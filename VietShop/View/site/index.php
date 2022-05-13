@@ -1,6 +1,6 @@
 <?php include('layout/hearder.php');
 //  print_r($categorys);die();
-session_start();
+
 ?>
 
 	<section id="slider"><!--slider-->
@@ -23,8 +23,8 @@ session_start();
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="./../../assets/site/images/home/girl1.jpg" class="girl img-responsive" alt="" />
-									<img src="./../../assets/site/images/home/pricing.png"  class="pricing" alt="" />
+									<img src="assets/site/images/home/girl1.jpg" class="girl img-responsive" alt="" />
+									<img src="assets/site/images/home/pricing.png"  class="pricing" alt="" />
 								</div>
 							</div>
 							<div class="item">
@@ -35,8 +35,8 @@ session_start();
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="./../../assets/site/images/home/girl2.jpg" class="girl img-responsive" alt="" />
-									<img src="./../../assets/site/images/home/pricing.png"  class="pricing" alt="" />
+									<img src=".assets/site/images/home/girl2.jpg" class="girl img-responsive" alt="" />
+									<img src="assets/site/images/home/pricing.png"  class="pricing" alt="" />
 								</div>
 							</div>
 							
@@ -48,8 +48,8 @@ session_start();
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="./../../assets/site/images/home/girl3.jpg" class="girl img-responsive" alt="" />
-									<img src="./../../assets/site/images/home/pricing.png" class="pricing" alt="" />
+									<img src="assets/site/images/home/girl3.jpg" class="girl img-responsive" alt="" />
+									<img src="assets/site/images/home/pricing.png" class="pricing" alt="" />
 								</div>
 							</div>
 							
@@ -97,7 +97,7 @@ session_start();
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="product info text-center">
-											<img src="assets/uploads/<?= $product->image; ?>" alt=""  style="height:150px"/>
+											<img src="assets/uploads/<?= $product->image; ?>" alt=""  style="width: 130px; height:180px"/>
 											<h2><?= number_format($product->price)  ; ?>đ</h2>
 											<p><?= $product->title ; ?></p>
 											<a href="index.php?controller=cart&action=index&id=<?= $product->id ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -105,7 +105,7 @@ session_start();
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="fa fa-plus-square"></i>xem chi tiết sản phâm</a></li>
+										<li><a href="index.php?controller=details&action=index&id=<?= $product->id ?>"><i class="fa fa-plus-square"></i>Xem chi tiết sản phẩm</a></li>
 								
 									</ul>
 								</div>
@@ -206,6 +206,7 @@ session_start();
 						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 							<div class="carousel-inner">
 								<div class="item active">	
+									
 									<div class="col-sm-4">
 										<div class="product-image-wrapper">
 											<div class="single-products">
@@ -219,32 +220,7 @@ session_start();
 											</div>
 										</div>
 									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/recommend2.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/recommend3.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
+								
 								</div>
 								<div class="item">	
 									<div class="col-sm-4">

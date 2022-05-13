@@ -14,9 +14,9 @@
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
                     <form class="search-form" action="index.php?controller=product&action=search" method="POST">
-                      <i class="icon-search"></i>
+                
                       <input type="search" placeholder="Search Here" name="search" title="Search here">
-                      <button type="submit">seach</button>
+                      <button type="submit"class="btn btn-sm btn-primary">seach</button>
                     </form>
                   </li>
                 </ul>
@@ -50,8 +50,8 @@
                       <td><?= number_format($product->price) ?></td>
                       <!-- edit&id -->
                       <td>
-                         <a href="index.php?controller=product&action=edit&id=<?= $product->id ?>">sua</a>
-                          <a href="index.php?controller=product&action=delete&id=<?= $product->id ?>">xoa</a>
+                         <a href="index.php?controller=product&action=edit&id=<?= $product->id ?>" class="btn btn-primary"><i class="mdi mdi-delete-forever"></i></a>
+                          <a href="index.php?controller=product&action=delete&id=<?= $product->id ?>" class="btn btn-primary"><i class="mdi mdi-credit-card"></i></a>
                       </td>                          
                     </tr>          
                     <?php endforeach; ?>

@@ -42,7 +42,7 @@
       </a>
       <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="">Danh sách đơn hàng </a></li>
+          <li class="nav-item"> <a class="nav-link" href="index.php?controller=order&action=index">Danh sách đơn hàng </a></li>
         </ul>
       </div>
     </li>

@@ -18,24 +18,20 @@ switch ($controller) {
     case 'order':
         include_once './Controller/admin/orderController.php';
         $objController = new OrderController();
-        break;
-        // case 'User':
-        //     include_once './controllers/UserController.php';
-        //     $objController = new UserController();
-        //     break;
+        break;  
     case "site":
         include './Controller/client/productController.php';
         $objController = new ProductController();
         break;
-    case "sites":
-        include './Controller/client/categoryController.php';
-        $objController = new CategoryController();
-        break;
     case "cart":
         include './Controller/client/orderController.php';
-        $objController = new CartController();
+        $objController = new OrderController();
         break;
     default:
+    case 'details':
+        include_once './Controller/client/detailConttroller.php';
+       $objController = new DetailController();
+        break;
     case "user ":
         include './Controller/userController.php';
         $objController = new UserController();

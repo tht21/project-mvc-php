@@ -1,24 +1,29 @@
 <?php
-class Request {
-    private $requestData;
+class Request
+{
+    private $request;
     private $errors = [];
+ 
     public function __construct($request)
     {
-        $this->requestData = $request;
+        $this->request = $request;
     }
-    public function validateForm($fields, $messages) {
+    public function validateForm($rules, $messages)
+    {
 
-        foreach ($fields as $field){
-            if(isset($this->requestData[$field]) && $this->requestData[$field] == "") {
+        foreach ($rules as $field) {
+            if (isset($this->request[$field]) && $this->request[$field] == "") {
                 $this->errors[$field] = $messages[$field];
             }
         }
-        $_SESSION['errors' ] = $this->errors;
-        // echo "<pre>";
-        // print_r($fields);
-        // print_r($this->requestData);
-        // echo "</pre>";
-        // die();
-
+        $_SESSION['errors'] = $this->errors;
+        $_SESSION['requests'] =  $this->request ;
+    
+    }
+    public function isValid(): bool
+    {
+        if(count($this->errors) > 0){  return false; }else { return true;
+        }
+        
     }
 }
