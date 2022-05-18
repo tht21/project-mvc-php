@@ -1,5 +1,4 @@
 <?php include('layout/hearder.php');
-//  print_r($categorys);die();
 
 ?>
 
@@ -15,7 +14,7 @@
 						</ol>
 						
 						<div class="carousel-inner">
-							<div class="item active">
+							<d iv class="item active">
 								<div class="col-sm-6">
 									<h1><span>V</span>-SHOPPER</h1>
 									<h2>Free E-Commerce Template</h2>
@@ -26,7 +25,7 @@
 									<img src="assets/site/images/home/girl1.jpg" class="girl img-responsive" alt="" />
 									<img src="assets/site/images/home/pricing.png"  class="pricing" alt="" />
 								</div>
-							</div>
+							</d>
 							<div class="item">
 								<div class="col-sm-6">
 									<h1><span>V</span>-SHOPPER</h1>
@@ -100,7 +99,7 @@
 											<img src="assets/uploads/<?= $product->image; ?>" alt=""  style="width: 130px; height:180px"/>
 											<h2><?= number_format($product->price)  ; ?>đ</h2>
 											<p><?= $product->title ; ?></p>
-											<a href="index.php?controller=cart&action=index&id=<?= $product->id ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<a href="index.php?controller=cart&action=add&id=<?= $product->id ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 								</div>
 								<div class="choose">

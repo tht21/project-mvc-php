@@ -31,7 +31,7 @@ class CategoryModel
     public function find($id)
     {
         global $conn;
-        $sql = "SELECT * FROM `category` WHERE `id` = $id";
+        $sql = "SELECT * FROM `category` WHERE  `id` = $id "   ;
         $stmt = $conn->query($sql);
         $stmt->setFetchMode(PDO::FETCH_OBJ);
         //fetch se tra ve du lieu 1 ket qua

@@ -6,7 +6,7 @@ class ProductModel
     public   function getAll()
     {
         global $conn;
-        $sql = "SELECT product.*,category.name FROM product join category on product.category_id = category.id  ORDER BY id ASC" ;
+        $sql = "SELECT product.*,category.name FROM product join category on product.category_id = category.id   " ;
         $stmt = $conn->query($sql);
         // Thiet lap csdl tra ve
         $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -39,10 +39,15 @@ class ProductModel
         $row = $stmt->fetch();
         return $row;
     }
-    public  function create($title,  $description,   $image,   $quantity, $price, $category)
+    public  function create($data)
     {
         global $conn;
-     
+        $title =$data['title'];
+        $description =$data['description'];
+        $image =$data['image'];
+        $quantity =$data['quantity'];
+        $price =$data['price'];
+        $category =$data['category_id'];
         $sql = "INSERT INTO product  (category_id,title,description,image,quantity,price) VALUES ('$category','$title', '$description', '$image', '$quantity',' $price')";
         $conn->query($sql);
     }

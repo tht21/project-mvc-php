@@ -7,7 +7,7 @@ include('./View/admin/layout/sidebar.php');
     <div class="row">
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
-          <div class="card-body">            
+          <div class="card-body">
             <h4 class="card-title">Danh sách sản phẩm</h4>
             <p class="card-description">
             <div class="row">
@@ -16,13 +16,13 @@ include('./View/admin/layout/sidebar.php');
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
                     <form class="search-form" action="index.php?controller=product&action=search" method="POST">
-                      
-                      <input type="search"placeholder="Search Here" name="search" title="Search here">
+
+                      <input type="search" placeholder="Search Here" name="search" title="Search here">
                       <button type="submit" class="btn btn-sm btn-primary">seach</button>
-            
-            </form>
+
+                    </form>
                   </li>
-                </ul> 
+                </ul>
               </div>
             </div>
             <?php if (isset($_SESSION['flash_message'])) : ?>
@@ -71,4 +71,7 @@ include('./View/admin/layout/sidebar.php');
           </div>
         </div>
       </div>
-      <?php include './View/admin/layout/footer.php' ?>
+    </div>
+  </div>
+</div>
+  <?php include './View/admin/layout/footer.php' ?>

@@ -31,12 +31,7 @@ class ProductController
             // print_r($_REQUEST);die();
         //    $_SESSION['requests'] = $_REQUEST;
         
-            $title =$_REQUEST['title'];
-            $description =$_REQUEST['description'];
-            $image =$_REQUEST['image'];
-            $quantity =$_REQUEST['quantity'];
-            $price =$_REQUEST['price'];
-            $category =$_REQUEST['category_id'];
+            
             $request = new Request($_REQUEST);
             $request->validateForm(
                 [
@@ -57,7 +52,7 @@ class ProductController
                 ]
             );
             if ($request->isvalid()) {
-                $this->productModel->create($title,  $description,   $image,   $quantity, $price, $category);
+                $this->productModel->create($_REQUEST);
                 $_SESSION['flash_message'] = "Thêm mới thành công";
                 // echo "<pre>";
                 // print_r($_REQUEST);
@@ -88,7 +83,8 @@ class ProductController
 
     public  function delete()
     {
-        $id = $_REQUEST['id'];
+        $id = $_REQUEST['id '];
+        
         $this->productModel->delete($id);
         header('location:index.php?controller=product&action=index');
     }

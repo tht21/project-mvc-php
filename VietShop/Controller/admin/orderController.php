@@ -9,6 +9,6 @@ class OrderController{
     include_once('./View/admin/order/index.php');
  }
  
- public function search(){}
+
 
 }   

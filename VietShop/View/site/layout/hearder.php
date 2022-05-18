@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,8 @@
     <link href="assets/site/css/animate.css" rel="stylesheet">
 	<link href="assets/site/css/main.css" rel="stylesheet">
 	<link href="assets/site/css/responsive.css" rel="stylesheet">
+
+
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -22,6 +25,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/site/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/site/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+	
 </head><!--/head-->
 
 <body>
@@ -40,11 +44,11 @@
 					<div class="col-md-8 clearfix">
 						<div class="shop-menu clearfix pull-right">
 							<ul class="nav navbar-nav">
-								
-							6
-								<li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
+						
+							  <li><a><i class="fa fa-user"></i><?php  if(isset($_SESSION['user'])) echo $_SESSION['user']->email;?></a></li>
+								<li><a href="index.php?controller=user&action=checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="index.php?controller=cart&action=index&add&id="><i class="fa fa-shopping-cart"></i> Cart (<?php if(isset($_SESSION['cart'])) print_r(count($_SESSION['cart'])) ?> )</a></li>
+								<li><a href="index.php?controller=user&action=login"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -68,11 +72,10 @@
 								<li><a href="index.php" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.php">Products</a></li>
-										<li><a href="product-details.php">Product Details</a></li> 
+                                       
 										<li><a href="checkout.php">Checkout</a></li> 
-										<li><a href="cart.php">Cart</a></li> 
-										<li><a href="login.php">Login</a></li> 
+										<li><a href="index.php?controller=cart&action=index">Cart <?php  print_r($_SESSION)?></a></li> 
+										<li><a href="index.php?controller=site&action=login">Login</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>

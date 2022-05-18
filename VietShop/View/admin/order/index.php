@@ -30,26 +30,18 @@
                     <th> ID</th>                 
                     <th> Tên sản phẩm </th>
                     <th> Tên người  đặt hàng</th>
-                  
                     <th> Sô lượng </th>
-                    <th>tong  tiền </th>
-                    <th> Action</th>
-
+                    <th>tong  tiền </th>                 
                   </tr>
                 </thead>
                 <tbody>
                   <?php foreach ($order as $key =>  $order) : ?>
                     <tr>
-                      <td><?= ++$key ?></td>
+                      <td><?= $order->id ?></td>
                       <td><?= $order->title?></td>                  
                       <td><?= $order->fullname ?></td>
-                      <td><?= $order->quantity ?></td>
-        
-                    
-                      <!-- edit&id -->
-                      <td>
-                        
-                      </td>
+                      <td><?= $order->quantityCart ?></td>
+                      <td><?= $order->total ?></td>
                     </tr>
                     </tr>
                   <?php endforeach; ?>

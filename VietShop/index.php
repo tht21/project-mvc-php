@@ -18,7 +18,7 @@ switch ($controller) {
     case 'order':
         include_once './Controller/admin/orderController.php';
         $objController = new OrderController();
-        break;  
+        break;
     case "site":
         include './Controller/client/productController.php';
         $objController = new ProductController();
@@ -30,7 +30,7 @@ switch ($controller) {
     default:
     case 'details':
         include_once './Controller/client/detailConttroller.php';
-       $objController = new DetailController();
+        $objController = new DetailController();
         break;
     case "user ":
         include './Controller/userController.php';
@@ -57,6 +57,12 @@ switch ($action) {
         break;
     case 'search':
         $objController->search();
+        break;
+    case 'showCart':
+        $objController->showCart();
+        break;
+    case 'checkout':
+        $objController->checkout();
         break;
     default:
         include './View/login.php';

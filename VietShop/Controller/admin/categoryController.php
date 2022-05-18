@@ -13,7 +13,6 @@ class CategoryController{
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $name = $_POST['name'];
             $this->categoryModel->create($name);
-   ;
             $_SESSION['flash_message'] = "Thêm thành công";
             header('Location: index.php?controller=category&action=index');
         }
@@ -40,6 +39,7 @@ class CategoryController{
     }
     public  function delete(){
         $id = $_REQUEST['id'];
+        
         $this->categoryModel->delete($id);
         header('location:index.php?controller=category&action=index');
     }
