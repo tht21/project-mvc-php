@@ -65,7 +65,8 @@ switch ($action) {
         $objController->checkout();
         break;
     default:
-        include './View/login.php';
+    case 'login':
+        $objController->login();
         break;
 }
 

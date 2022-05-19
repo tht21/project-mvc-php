@@ -15,9 +15,12 @@ class UserController
             // print_r($_SESSION['user']);
             //  die();  
             if ($_SESSION['role']==1) {
+                $_SESSION['admin']= $check;
+               if(isset($_SESSION['user']))
                 header('location:index.php?controller=product&action=index');
+                unset($_SESSION['user']);
             }
-            if ($_SESSION['role']==2) {
+            else if ($_SESSION['role']==2) {
                 $_SESSION['user']= $check;
                 header('location:php?controller=site&action=index');
             }
@@ -25,8 +28,7 @@ class UserController
         include './View/login.php';
     }
     public  function checkout(){
-  
-        unset($_SESSION['user']);
+         unset($_SESSION['user']);
         header('location:php?controller=site&action=index');
     } 
 

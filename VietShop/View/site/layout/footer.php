@@ -142,7 +142,7 @@
 	</footer><!--/Footer-->
 	
 
-  
+	<script src="assets/site/js/search.js"></script>
     <script src="assets/site/js/jquery.js"></script>
 	<script src="assets/site/js/bootstrap.min.js"></script>
 	<script src="assets/site/js/jquery.scrollUp.min.js"></script>

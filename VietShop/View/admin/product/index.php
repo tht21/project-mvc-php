@@ -58,8 +58,8 @@ include('./View/admin/layout/sidebar.php');
                       <td><?= number_format($product->price) ?></td>
                       <!-- edit&id -->
                       <td>
-                        <a href="index.php?controller=product&action=delete&id=<?= $product->id ?>" onclick="return confirm ('Bạn có chắc muốn xóa <?= $product->title ?> không')" class="btn btn-primary"><i class="mdi mdi-delete-forever"></i></a>
-                        <a class="btn btn-primary" href="index.php?controller=product&action=edit&id=<?= $product->id ?>"><i class="mdi mdi-credit-card"></i></a>
+                        <a href="index.php?controller=product&action=delete&id=<?= $product->id ?>" onclick="return confirm ('Bạn có chắc muốn xóa <?= $product->title ?> không')" class="btn btn-sm btn-primary"><i class="mdi mdi-delete-forever"></i></a>
+                        <a class="btn btn-sm btn-primary" href="index.php?controller=product&action=edit&id=<?= $product->id ?>"><i class="mdi mdi-credit-card"></i></a>
                       </td>
                     </tr>
                     </tr>
@@ -71,7 +71,5 @@ include('./View/admin/layout/sidebar.php');
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+
   <?php include './View/admin/layout/footer.php' ?>

@@ -15,6 +15,8 @@ class OrderController
 
     public function add()
     {
+      
+       if( isset($_SESSION['user'])) {
         $id =  $_REQUEST['id'];
         $quantity = (isset($_REQUEST['quantityCart']) ? $_REQUEST['quantityCart'] : 1);
         // echo $action;
@@ -37,6 +39,10 @@ class OrderController
             $_SESSION['cart'][$id] = $item;
         }
         header('location: index.php?controller=cart&action=showCart');
+        }else{
+            header('location: index.php?controller=user&action=login');
+        }
+     
     }
     public  function showCart()
     {
@@ -54,6 +60,7 @@ class OrderController
                 $total = ($value['quantityCart'] * $value['price']);          
                 $this->detailModel->create($productId, $orderId, $quantityCart, $total); 
                 $_SESSION['flash_message'] = "Đặt hàng thành công";
+                header('location: index.php?controller=site&action=index');
             }
         }
 

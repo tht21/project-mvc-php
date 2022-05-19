@@ -14,5 +14,8 @@ class ProductController
         $categorys  =  $this->categoryModel->getAll();
         include_once('./View/site/index.php');
     }
+    public  function add(){
+        include_once('./View/site/contact.php');
+    }
 }
   

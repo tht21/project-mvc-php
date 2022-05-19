@@ -12,11 +12,11 @@
               <div class="col-lg-3">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <form class="search-form" action="index.php?controller=category&action=search" method="POST">
-                      <i class="icon-search"></i>
-                      <input type="search" placeholder="Search Here" name="search" title="Search here">
-                      <button type="submit">seach</button>
+                    <form class="search-form" action="#">
+                      
+                      <input type="search" id="myInput" class="form-control" placeholder="Search Here" title="Search here">
                     </form>
+
                   </li>
                 </ul>
               </div>
@@ -29,14 +29,14 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="myTable">
                 <?php foreach ($category as $key => $category) : ?>
                   <tr>
                     <td><?= $category->id ?></td>
                     <td><?= $category->name ?></td>
                     <!-- edit&id -->
-                    <td> <a href="index.php?controller=category&action=edit&id=<?= $category->id ?>">sua</a>
-                      <a href="index.php?controller=category&action=delete&id=<?= $category->id ?>" onclick=" return confirm ('Bạn có chắc muốn xóa <?= $category->name ?> không')">xoa</a>
+                    <td> <a href="index.php?controller=category&action=edit&id=<?= $category->id ?>" class="btn btn-sm btn-primary"><i class="mdi mdi-delete-forever"></i></a>
+                      <a href="index.php?controller=category&action=delete&id=<?= $category->id ?>" onclick=" return confirm ('Bạn có chắc muốn xóa <?= $category->name ?> không')" class="btn btn-sm btn-primary"><i class="mdi mdi-credit-card"></i></a>
                     </td>
                   </tr>
                   </tr>

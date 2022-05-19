@@ -80,4 +80,3 @@ $carts = (isset($_SESSION['cart'])) ? $_SESSION['cart'] : [];
 	
 </form>
 <!--/#do_action-->
-<?php include('layout/footer.php') ?>

@@ -8,6 +8,8 @@
         </footer>
         <!-- partial -->
 <!-- plugins:js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="assets/site/js/search.js"></script>
   <script src="assets/admin/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
