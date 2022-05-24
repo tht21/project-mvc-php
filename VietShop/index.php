@@ -35,7 +35,6 @@ switch ($controller) {
     case "user ":
         include './Controller/userController.php';
         $objController = new UserController();
-
         break;
 }
 // action giua model vaf controller

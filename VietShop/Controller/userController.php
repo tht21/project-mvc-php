@@ -16,7 +16,7 @@ class UserController
             //  die();  
             if ($_SESSION['role']==1) {
                 $_SESSION['admin']= $check;
-               if(isset($_SESSION['user']))
+               if(isset($_SESSION['admin']))
                 header('location:index.php?controller=product&action=index');
                 unset($_SESSION['user']);
             }

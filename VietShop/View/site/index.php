@@ -1,5 +1,7 @@
 <?php include('layout/hearder.php');
-
+// echo '<pre>';
+// print_r($_SESSION['user']);
+// die();
 ?>
 
 <section id="slider">
@@ -93,7 +95,7 @@
 			</div>
 
 			<div class="col-sm-9 padding-right">
-				<div id='' class="features_items">
+				<div id='myTable div' class="features_items">
 					<!--features_items-->
 					<h2 class="title text-center">Features Items</h2>
 					<?php foreach ($products as $key =>  $product) : ?>
@@ -115,23 +117,38 @@
 								</div>
 							</div>
 						</div>
-					<?php endforeach; ?>					
-				</div>			
+					<?php endforeach; ?>
+				</div>
 				<!--features_items-->
 			</div>
 			<div class="row" style="text-align: right;">
-			<ul class="pagination">
-				<li><a href="#">&laquo;</a></li>
-				<li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">5</a></li>
-				<li><a href="#">&raquo;</a></li>
-			</ul>
+				<ul class="pagination">
+					<?php
+					if ($current_page > 1 && $total_page > 1) {
+						
+						echo '<li><a href="index.php?controller=site&action=index&page=' . ($current_page - 1) . '">&laquo</a> </li> ';
+					}
+
+					// Lặp khoảng giữa
+					for ($i = 1; $i <= $total_page; $i++) {
+						// Nếu là trang hiện tại thì hiển thị thẻ span
+						// ngược lại hiển thị thẻ a
+						if ($i == $current_page) {
+							echo '<li><a href="index.php?controller=site&action=index&page=' . $i . '">' . $i . '</a> </li> ';
+						} else {
+							echo '<li><a href="index.php?controller=site&action=index&page=' . $i . '">' . $i . '</a> </li> ';
+						}
+					}
+
+					// nếu current_page < $total_page và total_page > 1 mới hiển thị nút prev
+					if ($current_page < $total_page && $total_page > 1) {
+						echo '<li><a href="index.php?controller=site&action=index&page=' . ($current_page + 1) . '">&raquo</a></li>  ';
+					} ?>
+					</ul>
+					</div>
+				
+			</div>
 		</div>
-		</div>
-	</div>
 </section>
 
 <?php include('layout/footer.php') ?>

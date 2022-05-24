@@ -6,7 +6,7 @@ class ProductModel
     public   function getAll()
     {
         global $conn;
-        $sql = "SELECT product.*,category.name FROM product join category on product.category_id = category.id   " ;
+        $sql = "SELECT product.*,category.name FROM product join category on product.category_id = category.id " ;
         $stmt = $conn->query($sql);
         // Thiet lap csdl tra ve
         $stmt->setFetchMode(PDO::FETCH_OBJ);
@@ -15,7 +15,18 @@ class ProductModel
         //Tra du lieu ve controller
         return $rows;
     }
-
+    public   function getPage($start, $limit)
+    {
+        global $conn;
+        $sql = "SELECT * FROM product LIMIT $start, $limit" ;
+        $stmt = $conn->query($sql);
+        // Thiet lap csdl tra ve
+        $stmt->setFetchMode(PDO::FETCH_OBJ);
+        //fetchALL se tra ve du lieu nhieu hon 1 ket qua
+        $rows = $stmt->fetchAll();
+        //Tra du lieu ve controller
+        return $rows;
+    }
     public  function search($key)
     {
         global $conn;
